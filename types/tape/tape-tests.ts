@@ -48,8 +48,8 @@ tape(name, (test: tape.Test) => {
 	var num: number;
 	var ms: number;
 	var value: any;
-	var actual: any;
-	var expected: any;
+	var actual: { a: number, b: string };
+	var expected: { a: 0, b: 'TEST' };
 	var err: any;
 	var fn = function() {};
 	var msg: string;

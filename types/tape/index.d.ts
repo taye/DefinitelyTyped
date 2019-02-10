@@ -5,6 +5,7 @@
 //                 Dennis Schwartz <https://github.com/DennisSchwartz>
 //                 Michael Henretty <https://github.com/mikehenrty>
 //                 Rafał Ostrowski <https://github.com/rostrowski>
+//                 Taye Adeyemi <https://github.com/taye>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 /// <reference types="node" />
@@ -141,12 +142,12 @@ declare namespace tape {
         /**
          * Assert that a === b with an optional description msg.
          */
-        equal(actual: any, expected: any, msg?: string): void;
-        equals(actual: any, expected: any, msg?: string): void;
-        isEqual(actual: any, expected: any, msg?: string): void;
-        is(actual: any, expected: any, msg?: string): void;
-        strictEqual(actual: any, expected: any, msg?: string): void;
-        strictEquals(actual: any, expected: any, msg?: string): void;
+        equal<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        equals<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        isEqual<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        is<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        strictEqual<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        strictEquals<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
 
         /**
          * Assert that a !== b with an optional description msg.
@@ -164,10 +165,10 @@ declare namespace tape {
         /**
          * Assert that a and b have the same structure and nested values using node's deepEqual() algorithm with strict comparisons (===) on leaf nodes and an optional description msg.
          */
-        deepEqual(actual: any, expected: any, msg?: string): void;
-        deepEquals(actual: any, expected: any, msg?: string): void;
-        isEquivalent(actual: any, expected: any, msg?: string): void;
-        same(actual: any, expected: any, msg?: string): void;
+        deepEqual<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        deepEquals<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        isEquivalent<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        same<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
 
         /**
          * Assert that a and b do not have the same structure and nested values using node's deepEqual() algorithm with strict comparisons (===) on leaf nodes and an optional description msg.
@@ -184,9 +185,9 @@ declare namespace tape {
         /**
          * Assert that a and b have the same structure and nested values using node's deepEqual() algorithm with loose comparisons (==) on leaf nodes and an optional description msg.
          */
-        deepLooseEqual(actual: any, expected: any, msg?: string): void;
-        looseEqual(actual: any, expected: any, msg?: string): void;
-        looseEquals(actual: any, expected: any, msg?: string): void;
+        deepLooseEqual<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        looseEqual<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
+        looseEquals<T> (actual: T, expected: T extends infer P ? P & T : never, msg?: string): void
 
         /**
          * Assert that a and b do not have the same structure and nested values using node's deepEqual() algorithm with loose comparisons (==) on leaf nodes and an optional description msg.
